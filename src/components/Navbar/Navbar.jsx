@@ -8,16 +8,16 @@ import { RiLogoutBoxRLine } from "react-icons/ri";
 
 const Navbar = () => {
     return (
-        <div>
-            <nav className='bg-[#6E00FF] grid gap-56 w-24 h-screen'>
+        <div className='my-auto'>
+            <nav className='bg-[#6E00FF] grid gap-56 w-24 rounded-3xl'>
                 <div className='grid gap-7 items-center mx-auto'>
-                    <img className='w-[60px] rounded-full border mt-3' src={profile1} alt="profile" />
+                    <img className='w-[60px] rounded-full mt-6' src={profile1} alt="profile" />
                     <SlHome className='text-[35px] text-white mx-auto'/>
                     <AiOutlineMessage className='text-[35px] text-white mx-auto'/>
                     <IoMdNotificationsOutline className='text-[35px] text-white mx-auto'/>
                     <IoSettingsOutline className='text-[35px] text-white mx-auto'/>
                 </div>
-                <div className='mx-auto h-10'>
+                <div className='mx-auto h-10 pb-20'>
                     <RiLogoutBoxRLine className='text-[35px] text-white'/>
                 </div>
             </nav>
