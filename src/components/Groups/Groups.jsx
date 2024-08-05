@@ -9,11 +9,14 @@ const Groups = () => {
                     <div className='flex gap-5'>
                         <img className='w-[50px]' src={groupProfile} alt="groups-profile" />
                         <div>
-                            <h3>Friends Forever</h3>
-                            <span>hahahaha!</span>
+                            <h3 className='text-[#303030] text-base font-semibold'>Friends Forever</h3>
+                            <span className='text-[#303030]'>hahahaha!</span>
                         </div>
                     </div>
-                    <span>Today, 9.52pm</span>
+                    <div className='grid'>
+                        <span className='text-[#7C7C7C]'>Today, 9.52pm</span>
+                        <span className='text-right bg-[#F24E1E] ml-20 pr-2 text-white rounded-full'>4</span>
+                    </div>
                 </div>
                 <hr />
             </div>
@@ -23,11 +26,11 @@ const Groups = () => {
                     <div className='flex gap-5'>
                         <img className='w-[50px]' src={groupProfile} alt="groups-profile" />
                         <div>
-                            <h3>Mera Gang</h3>
-                            <span>Kyuuuuuu???</span>
+                            <h3 className='text-[#303030] text-base font-semibold'>Mera Gang</h3>
+                            <span className='text-[#303030]'>Kyuuuuuu???</span>
                         </div>
                     </div>
-                    <span>Today, 9.52pm</span>
+                    <span className='text-[#7C7C7C]'>Today, 9.52pm</span>
                 </div>
                 <hr />
             </div>
@@ -37,11 +40,11 @@ const Groups = () => {
                     <div className='flex gap-5'>
                         <img className='w-[50px]' src={groupProfile} alt="groups-profile" />
                         <div>
-                            <h3>Hiking</h3>
-                            <span>Its not going to happen</span>
+                            <h3 className='text-[#303030] text-base font-semibold'>Hiking</h3>
+                            <span className='text-[#303030]'>Its not going to happen</span>
                         </div>
                     </div>
-                    <span>Today, 9.52pm</span>
+                    <span className='text-[#7C7C7C]'>Today, 9.52pm</span>
                 </div>
             </div>
         </div>
