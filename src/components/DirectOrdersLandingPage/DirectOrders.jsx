@@ -1,4 +1,4 @@
-import directOrder from '../../../public/get_direct_orders.svg';
+import directOrder from '/public/get_direct_orders.svg';
 
 const DirectOrders = () => {
     return (
