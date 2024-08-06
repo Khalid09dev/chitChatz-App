@@ -10,7 +10,7 @@ const LiveVideoChat = () => {
     return (
         <div className='flex justify-center gap-24 py-20 bg-[#F8F8FA]'>
             <div className='relative'>
-                <img className='w-[500px]' src={videoChat} alt="#" />
+                <img className='w-[500px] rounded-t-lg' src={videoChat} alt="#" />
                 <div className='flex items-center gap-6 py-3.5 w-full justify-center absolute bottom-0 bg-[#12141D]'>
                     <MdFlipCameraAndroid className='text-white text-2xl'/>
                     <IoVideocam className='text-white text-2xl'/>
