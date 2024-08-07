@@ -7,28 +7,34 @@ import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2';
 
 const Login = () => {
-    const {signIn, user} = useContext(AuthContext);
+    const {signIn} = useContext(AuthContext);
     const navigate = useNavigate();
 
     //handle signin
-    const handleSignIn = (e) => {
+    const handleSignIn = async (e) => {
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
         const userCredentials = {email, password};
 
-        //user login
         signIn(userCredentials.email, userCredentials.password)
-        if(user?.email) {
-            navigate('/app');
-            Swal.fire({
-                icon: "success",
-                title: "Successfully Logged In",
-                showConfirmButton: false,
-                timer: 2000
-            });
-        }
+        .then((result) => {
+            console.log(result.user);
+            if(result.user) {
+                navigate('/app');
+                Swal.fire({
+                    icon: "success",
+                    title: "Successfully Logged In",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            }
+        })
+        .catch((error) => {
+            console.log(error.message);
+        })
+
     }
 
     //handle password visibility toggle
@@ -49,8 +55,7 @@ const Login = () => {
                     <div className="relative">
                         <input className="w-full py-2 pl-3 rounded-md mb-1" type={visible ? 'text' : 'password'} name="password" id="" placeholder="Password"/><div className="absolute bottom-3.5 right-4 cursor-pointer text-xl" onClick={handlePassToggle2}>{visible ? <FaRegEye/> : <FaRegEyeSlash/>}</div>
                     </div><br />
-                    <span className="text-white">Forget Password?</span> <br />
-                    <input className="text-white bg-[#003465] w-full text-base py-2 rounded-lg mt-7" type="submit" value="Sign in" />
+                    <input className="text-white bg-[#003465] w-full text-base py-2 rounded-lg cursor-pointer" type="submit" value="Sign in" />
                 </form>
                     <p className="text-white text-center py-5">or continue with</p>
                     <div className="flex justify-center gap-4">
