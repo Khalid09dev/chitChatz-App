@@ -4,7 +4,7 @@ import { FaFacebook } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-
+import Swal from 'sweetalert2';
 
 const Signup = () => {
     const {createUser, googleSignIn, logOut} = useContext(AuthContext);
@@ -27,6 +27,12 @@ const Signup = () => {
             logOut()
             .then(() => {
                 console.log('User logged out');
+                Swal.fire({
+                    icon: "success",
+                    title: "Successfully Signed Up",
+                    showConfirmButton: false,
+                    timer: 2000
+                });
                 navigate('/login');
             })
             .then(() => {
