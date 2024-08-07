@@ -7,7 +7,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Signup = () => {
-    const {createUser, googleSignIn} = useContext(AuthContext);
+    const {createUser, googleSignIn, logOut} = useContext(AuthContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,12 +21,23 @@ const Signup = () => {
         createUser(userCredentials.email, userCredentials.password)
         .then((result) => {
             console.log(result);
+            if(result.user) {
+            //user logged out
+            logOut()
+            .then(() => {
+                console.log('User logged out');
+            })
+            .then(() => {
+                console.log('user logged out error');
+            })
+            }
         })
         .catch((error) => {
             console.log(error);
         })
     }
 
+    //handle google signin
     const handleGoogleSignIn = () => {
         googleSignIn()
         .then((result) => {

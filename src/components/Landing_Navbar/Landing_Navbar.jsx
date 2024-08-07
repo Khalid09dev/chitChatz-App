@@ -14,7 +14,7 @@ const Landing_Navbar = () => {
                 </ul>
                 <div className="flex items-center gap-7 dm-sans">
                     <Link to="/login"><button>Login</button></Link>
-                    <button className="bg-[#FB8E0B] text-white py-2 px-3.5 rounded-md">Get Started Free</button>
+                    <Link to="/signup"><button className="bg-[#FB8E0B] text-white py-2 px-3.5 rounded-md">Get Started Free</button></Link>
                 </div>
             </nav>
         </div>
