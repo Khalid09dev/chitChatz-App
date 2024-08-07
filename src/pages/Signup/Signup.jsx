@@ -1,13 +1,14 @@
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Signup = () => {
     const {createUser, googleSignIn, logOut} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,6 +27,7 @@ const Signup = () => {
             logOut()
             .then(() => {
                 console.log('User logged out');
+                navigate('/app');
             })
             .then(() => {
                 console.log('user logged out error');
