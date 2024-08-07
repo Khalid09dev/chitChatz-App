@@ -27,7 +27,7 @@ const Signup = () => {
             logOut()
             .then(() => {
                 console.log('User logged out');
-                navigate('/app');
+                navigate('/login');
             })
             .then(() => {
                 console.log('user logged out error');
