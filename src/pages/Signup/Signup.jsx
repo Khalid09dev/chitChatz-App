@@ -7,8 +7,8 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Signup = () => {
-    const {createUser} = useContext(AuthContext);
-    
+    const {createUser, googleSignIn} = useContext(AuthContext);
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
@@ -19,6 +19,16 @@ const Signup = () => {
 
         //user signup
         createUser(userCredentials.email, userCredentials.password)
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            console.log(error);
+        })
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
         .then((result) => {
             console.log(result);
         })
@@ -41,7 +51,7 @@ const Signup = () => {
                 </form>
                     <p className="text-white text-center py-5">or continue with</p>
                     <div className="flex justify-center gap-4">
-                        <FcGoogle className="p-1 w-16 bg-white text-[35px] rounded-md"/>
+                        <FcGoogle className="p-1 w-16 bg-white text-[35px] rounded-md cursor-pointer" onClick={handleGoogleSignIn}/>
                         <FaGithub className="p-1 w-16 bg-white text-[35px] rounded-md"/>
                         <FaFacebook className="p-1 w-16 bg-white text-blue-500 text-[35px] rounded-md"/>
                     </div>
