@@ -1,8 +1,8 @@
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from 'sweetalert2';
 
@@ -30,6 +30,13 @@ const Login = () => {
             });
         }
     }
+
+    //handle password visibility toggle
+    const [visible, setVisible] = useState(false);
+    const handlePassToggle2 = () => {
+        setVisible(!visible);
+        // console.log('password visibility toggle', visible);
+    }
     return (
         <div className="flex items-center justify-center h-screen bg-gradient-to-r from-blue-500 to-blue-900">
             <div className="w-2/6 border border-[#5882c17d] py-10 px-20 bg-[#5882c147] backdrop-blur-2xl rounded-lg">
@@ -39,7 +46,9 @@ const Login = () => {
                     <label className="text-white">Email</label> <br />
                     <input className="w-full py-2 pl-3 rounded-md mb-4" type="email" name="email" placeholder="username@gmail.com"/> <br />
                     <label className="text-white">Password</label> <br />
-                    <input className="w-full py-2 pl-3 rounded-md mb-1" type="password" name="password" id="" placeholder="Password"/> <br />
+                    <div className="relative">
+                        <input className="w-full py-2 pl-3 rounded-md mb-1" type={visible ? 'text' : 'password'} name="password" id="" placeholder="Password"/><div className="absolute bottom-3.5 right-4 cursor-pointer text-xl" onClick={handlePassToggle2}>{visible ? <FaRegEye/> : <FaRegEyeSlash/>}</div>
+                    </div><br />
                     <span className="text-white">Forget Password?</span> <br />
                     <input className="text-white bg-[#003465] w-full text-base py-2 rounded-lg mt-7" type="submit" value="Sign in" />
                 </form>

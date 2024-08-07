@@ -75,7 +75,7 @@ const Signup = () => {
                     <input className="w-full py-2 pl-3 rounded-md mb-4" type="email" name="email" placeholder="username@gmail.com"/> <br />
                     <label className="text-white">Password</label> <br />
                     <div className="relative">
-                        <input className="w-full py-2 pl-3 rounded-md mb-1" type={visible ? 'text' : 'password'} name="password" id="" placeholder="Password"/><div className="absolute bottom-3.5 right-4 cursor-pointer text-xl" onClick={handlePassToggle}>{visible ? <FaRegEyeSlash/> : <FaRegEye/>}</div>
+                        <input className="w-full py-2 pl-3 rounded-md mb-1" type={visible ? 'text' : 'password'} name="password" id="" placeholder="Password"/><div className="absolute bottom-3.5 right-4 cursor-pointer text-xl" onClick={handlePassToggle}>{visible ? <FaRegEye/> : <FaRegEyeSlash/>}</div>
                     </div><br />
                     <span className="text-white">Forget Password?</span> <br />
                     <input className="text-white bg-[#003465] w-full text-base py-2 rounded-lg mt-7" type="submit" value="Sign up" />
