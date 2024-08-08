@@ -14,7 +14,7 @@ Welcome to the ChitChatz Application! This project provides a real-time chat pla
 
 ## Technologies Used
 
-- **Frontend**: React, TanstackQuery CSS/SCSS
+- **Frontend**: React, TanstackQuery, CSS/SCSS
 - **Backend**: Node.js, Express
 - **Database**: MongoDB
 - **Real-Time Communication**: Socket.IO
@@ -26,10 +26,14 @@ Welcome to the ChitChatz Application! This project provides a real-time chat pla
 
 To get started with the chat application locally, follow these steps:
 
+## Backend
+
+Backend Ripo: [https://github.com/Khalid09dev/ChitChatz_Server]
+
 1. **Clone the Repository**
 
    ```bash
    git clone https://github.com/Khalid09dev/chitChatz-App.git
-   cd chat-application
+   cd chitChatz-App
    npm install
    npm run dev
