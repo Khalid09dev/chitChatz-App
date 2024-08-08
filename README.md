@@ -26,10 +26,6 @@ Welcome to the ChitChatz Application! This project provides a real-time chat pla
 
 To get started with the chat application locally, follow these steps:
 
-## Backend
-
-Backend Ripo: [https://github.com/Khalid09dev/ChitChatz_Server]
-
 1. **Clone the Repository**
 
    ```bash
@@ -37,3 +33,7 @@ Backend Ripo: [https://github.com/Khalid09dev/ChitChatz_Server]
    cd chitChatz-App
    npm install
    npm run dev
+
+## Backend
+
+Backend Ripo: [https://github.com/Khalid09dev/ChitChatz_Server]
