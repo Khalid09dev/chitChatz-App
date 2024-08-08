@@ -1,8 +1,35 @@
-# React + Vite
+# Chat Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the ChitChatz Application! This project provides a real-time chat platform where users can communicate, share files, and more. Built with modern technologies, this application aims to deliver a seamless messaging experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Real-Time Chat**: Engage in instant messaging with other users.
+- **File Sharing**: Share files of various formats directly within the chat.
+- **User Authentication**: Secure login and user management.
+- **Notifications**: Receive real-time notifications for new messages and events.
+- **Group Chats**: Create and manage group conversations.
+- **Media Support**: Share images, videos, and other media files.
+- **User Presence**: See which users are online and active.
+
+## Technologies Used
+
+- **Frontend**: React, TanstackQuery CSS/SCSS
+- **Backend**: Node.js, Express
+- **Database**: MongoDB
+- **Real-Time Communication**: Socket.IO
+- **Authentication**: JWT (JSON Web Tokens)
+- **File Storage**: AWS S3 / Local Storage
+- **Deployment**: firebase, vercel
+
+## Installation
+
+To get started with the chat application locally, follow these steps:
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone https://github.com/Khalid09dev/chitChatz-App.git
+   cd chat-application
+   npm install
+   npm run dev
