@@ -4,9 +4,21 @@ import { AiOutlineMessage } from "react-icons/ai";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
 import { RiLogoutBoxRLine } from "react-icons/ri";
-
+import useLogout from '../../hooks/useLogout.js';
+import { useAuthContext } from '../../context/AuthContext';
+import { useEffect } from 'react';
+import { useNavigate } from'react-router-dom';
 
 const Navbar = () => {
+    const {logout} = useLogout();
+    const {authUser} = useAuthContext();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        //Navigate based on authentication status
+        navigate(authUser ? '/app/messages' : '/login');
+    }, [])
+
     return (
         <div className='my-auto'>
             <nav className='bg-[#6E00FF] grid gap-56 w-24 rounded-3xl'>
@@ -17,7 +29,7 @@ const Navbar = () => {
                     <IoMdNotificationsOutline className='text-[35px] text-white mx-auto'/>
                     <IoSettingsOutline className='text-[35px] text-white mx-auto'/>
                 </div>
-                <div className='mx-auto h-10 pb-20'>
+                <div className='mx-auto h-10 pb-20 cursor-pointer' onClick={logout}>
                     <RiLogoutBoxRLine className='text-[35px] text-white'/>
                 </div>
             </nav>
